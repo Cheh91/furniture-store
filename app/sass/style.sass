@@ -96,9 +96,12 @@ body
         display: flex
         justify-content: space-between
     &__item
-        width: 122px
+        max-width: 122px
+        width: 100%
         border-top: 3px solid transparent
         cursor: pointer
+        margin-left: 5px
+        margin-right: 5px
         &.is-active
             border-top: 3px solid red
         &-image
@@ -107,26 +110,31 @@ body
             margin: 0 auto
             position: relative
             margin-top: 12px
+            display: block
             svg
                 position: absolute
                 left: 50%
                 top: 50%
                 transform: translate(-50%, -50%)
-                fill: green
+                
         &-text
             text-align: center
             margin-top: 12px
             margin-bottom: 15px
             font-size: 15px
+            display: block
+            color: black
 
 .breadcrumb
     padding-left: 0
     display: flex
+    flex-wrap: wrap
     width: auto
     margin-top: 30px
-    margin-bottom: 50px
+    margin-bottom: 40px
     li
         padding-right: 20px
+        margin-bottom: 10px
         a
             font-size: 15px
             color: #999999
@@ -281,7 +289,7 @@ body
     height: 1px
     background-color: #ccc
     position: absolute
-    top: 35px
+    top: 36px
     z-index: -100
     
 .tab
@@ -369,17 +377,7 @@ body
             
 
 
-            
-
         
-
-
-
-    
- 
-
-
-
 @import "media"
 
 
