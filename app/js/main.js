@@ -1,20 +1,11 @@
 'use strict'
 
 jQuery(document).ready(function () {
-    // blockTabs();
     blockTabs();
     slider();
     initButton();
-    Tabs();
+    tabs();
 });
-
-function blockTabs(){
-    $(".info__block").not(":first").hide();
-        $(".top__wrapper .top__item").click(function(){
-            $(".top__wrapper .top__item").removeClass("is-active").eq($(this).index()).addClass("is-active");
-            $(".info__block").hide().eq($(this).index()).fadeIn();
-        }).eq(0).addClass("is-active");
-}
 
 
 function blockTabs(){
@@ -38,25 +29,12 @@ function blockTabs(){
             $(".info__slider").slick('refresh');
             $(".slider__nav").slick('refresh');
       
-            
-            
-            
+               
     });
 }
 
 
-// function initTabs(){
-//     $(".tab__item").not(":first").hide();
-//         $(".tabs__wrapper .tab").click(function(){
-//             $(".tabs__wrapper .tab").removeClass("active").eq($(this).index()).addClass("active");
-//             $(".tab__item").hide().eq($(this).index()).fadeIn();
-//         }).eq(0).addClass("active");
-
-    
-// }
-
-// $(document).ready(function 
-function Tabs(){
+function tabs(){
     $(".tab").on("click", function(e){
         e.preventDefault();
 
@@ -75,8 +53,6 @@ function Tabs(){
 
     });
 }
-
-
 
 
 
@@ -99,7 +75,45 @@ function slider(){
         focusOnSelect: true,
         prevArrow: '<button type="button" class="slick-btn slick-prev"></button>',
         nextArrow: '<button type="button" class="slick-btn slick-next"></button>',
+        responsive: [
+            {
+              breakpoint: 769,
+              settings: {
+                slidesToShow: 4
+              }
+            },
+            {
+                breakpoint: 650,
+                settings: {
+                    slidesToShow: 5,
+                    vertical: false
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    vertical: false,
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 440,
+                settings: {
+                    vertical: false,
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 380,
+                settings: {
+                    vertical: false,
+                    slidesToShow: 2,
+                }
+            }
+        ]
     });
+
+    
 
 }
 
@@ -110,76 +124,4 @@ function initButton(){
         $(".drop-btn").toggleClass("act");
     })
 }
-
-
-
-
-
-
-
-
-
-// $(function(){
-
-//         $(".info__block").not(":first").hide();
-//         $(".top__wrapper .top__item").click(function(){
-//             $(".top__wrapper .top__item").removeClass("is-active").eq($(this).index()).addClass("is-active");
-//             $(".info__block").hide().eq($(this).index()).fadeIn();
-//         }).eq(0).addClass("is-active");
-
-
-//         $('.info__slider').slick({
-//             asNavFor: ".slider__nav",
-//             fade: true,
-//             arrows: false
-//         });
-
-
-//         $('.slider__nav').slick({
-//             slidesToShow: 5,
-//             vertical: true,
-//             centerMode: true,
-//             asNavFor: ".info__slider",
-//             focusOnSelect: true,
-//             prevArrow: '<button type="button" class="slick-btn slick-prev"></button>',
-//             nextArrow: '<button type="button" class="slick-btn slick-next"></button>',
-//         });
-
-
-//         $(".tab__item").not(":first").hide();
-//         $(".tabs__wrapper .tab").click(function(){
-//             $(".tabs__wrapper .tab").removeClass("active").eq($(this).index()).addClass("active");
-//             $(".tab__item").hide().eq($(this).index()).fadeIn();
-//         }).eq(0).addClass("active");
-
-
-//         $(".drop-btn").click(function(e){
-//             e.preventDefault();
-//             $(".drop-menu").toggleClass("active");
-//             $(".drop-btn").toggleClass("act");
-//         })
-
-
-
-//         // $(".top__wrapper").delegate(".top__item", "click", function(e){
-//         //     e.preventDefault();
-
-//         //     // alert("привет")
-//         //     // if ($(this).hasClass('is-active')) return false;
-
-//         //     let $tab = $(this).attr('href');
-
-//         //     $('.top__item').removeClass('is-active');
-//         //     $(this).addClass('is-active');
-
-
-//         //     $(".info__block").removeClass("is-active");
-//         //     $($tab).addClass("is-active");
-//         // })
-
-       
-
-// })
-
-
 

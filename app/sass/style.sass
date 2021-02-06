@@ -47,10 +47,38 @@ body
     margin: 0 auto
 
 .header
+    &__user
+        &-drop
+            cursor: pointer
+            position: relative
+            // padding-right: 20px
+            margin-right: 20px
+            &:after
+                position: absolute
+                font-family: "icomoon"
+                content: "\f107"
+                right: -20px
+                top: -5px
+                font-size: 18px
+    &__basket
+        margin-left: 30px
+        padding-right: 15px
+        position: relative
+        &-icon
+            cursor: pointer
+        &-counter
+            position: absolute
+            top: 5px
+            right: 0px           
     &__top
         width: 100%
         height: 42px
         background: #f0f3f8
+        &-item
+            display: flex
+            justify-content: flex-end
+            padding-top: 10px
+
     &__bottom
         height: 120px
         display: flex
@@ -89,6 +117,9 @@ body
             margin-bottom: 5px
             color: #454647
             display: inline-block
+            border-bottom: 1px solid transparent
+            &:hover
+                border-color: #454647
 
 .top
     background-color: #f9fafc
@@ -142,7 +173,9 @@ body
             color: #454647
 
 .col-1
-    width: 845px
+    max-width: 845px
+    width: 100%
+    margin-right: 20px
     // width: 100%
 
 .col-2
@@ -167,38 +200,52 @@ body
         max-width: 660px
         width: 100%
     &__inner
-        width: 660px
+        max-width: 660px
+        width: 100%
+
         &-price
             font-size: 40px
             color: #e92c39
             font-weight: 600
         sup
             font-weight: 300
-            padding-left: 10px
+            padding-left: 8px
+            font-size: 20px
+            
     &__inner
         margin-top: 35px
         display: flex
         justify-content: space-between
+        flex-wrap: wrap
         &-btn
             display: flex
         &-buy
             font-size: 16px
-            line-height: 48px
+            line-height: 42px
             color: #fff
             background-color: #ee3346
             display: inline-block
             padding-left: 26px
             padding-right: 23px
-            border-right: 1px solid #d1192c
+            border: 2px solid transparent 
+            border-right: 1px solid #d1192c 
             border-radius:  10px 0px 0px 10px
+            transition: all .3s
+            &:hover
+                background-color: transparent
+                border: 2px solid #d1192c
+                border-right: 1px solid #d1192c
+                color: #d1192c
         &-drop
             width: 38px
             height: 48px
             background-color: #ee3346
+            border: 2px solid transparent
             border-left: 1px solid #f15767
             border-radius:  0px 10px 10px 0px
             position: relative
             cursor: pointer
+            transition: all .3s
             &:before
                 position: absolute
                 font-family: "icomoon"
@@ -208,6 +255,13 @@ body
                 transform: translate(-50%, -50%)
                 color: #fff
                 font-size: 20px
+                transition: color .3s
+            &:hover
+                background-color: transparent
+                border: 2px solid #ee3346
+                border-left: 1px solid #f15767
+                &::before
+                    color: #ee3346
 
 
 .slider__wrapper
@@ -230,6 +284,7 @@ body
     padding-left: 8px
     padding-top: 35px
     position: relative
+    margin-left: 10px
     &-item
         margin: 0 auto
         outline: none
@@ -279,6 +334,8 @@ body
             left: 0px
             // transform: rotate(180deg)
             font-size: 22px
+.tabs
+    display: flex
 
 .tabs__wrapper
     margin-top: 150px
@@ -289,11 +346,11 @@ body
     height: 1px
     background-color: #ccc
     position: absolute
-    top: 36px
+    top: 35px
     z-index: -100
     
 .tab
-    width: 24.6%
+    width: 25%
     display: inline-block
     text-align: center
     border-bottom: 1px solid transparent
@@ -334,6 +391,10 @@ body
     color: #2b2b2b
     display: inline-block
     cursor: pointer
+    transition: border .3s, color .3s
+    &:hover
+        border-color:#ababab
+        color: #ababab
 
 
 .drop
